@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/layout/navbar";
+import Navbar from "./components/layouts/navbar";
 import { CategoryList } from "./components/pages/home/category/category-list";
 import { ReleventList } from "./components/pages/home/relevant/relevant-list";
 

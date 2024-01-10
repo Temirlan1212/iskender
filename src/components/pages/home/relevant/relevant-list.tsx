@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "../../../../lib/utils";
-import ReleventCard from "./relevant-card";
+import ReleventCard from "../../../cards/relevant-card";
 import fakeLoadingPromise from "../../../../helpers/fakeLoadingPromise";
 import { ScrollArea, ScrollBar } from "../../../ui/scroll-area";
 import { RelevantCardSkeleton } from "../../../skeletons/relevant-card-skeleton";

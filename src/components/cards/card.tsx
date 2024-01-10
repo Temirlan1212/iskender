@@ -1,7 +1,6 @@
-import { cn } from "../../../../lib/utils";
+import { cn } from "../../lib/utils";
 
-export interface CategoryCardProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   url: string;
   title: string;
   quantity: number;
@@ -10,17 +9,11 @@ export interface CategoryCardProps
   };
 }
 
-const CategoryCard = ({
-  url,
-  title,
-  quantity,
-  className,
-  props,
-}: CategoryCardProps) => {
+const Card = ({ url, title, quantity, className, props }: CardProps) => {
   return (
     <div
       className={cn(
-        "flex flex-col w-[fit-content] gap-[5px] w-[170px] h-[180px] bg-white rounded-[10px]",
+        "flex flex-col w-[fit-content] gap-[5px] w-[200px] h-[341px] bg-white rounded-[10px]",
         className
       )}
     >
@@ -42,4 +35,4 @@ const CategoryCard = ({
   );
 };
 
-export default CategoryCard;
+export default Card;

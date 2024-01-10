@@ -1,6 +1,6 @@
 import { AvatarProps } from "@radix-ui/react-avatar";
-import { Avatar, AvatarFallback, AvatarImage } from "../../../ui/avatar";
-import { cn } from "../../../../lib/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { cn } from "../../lib/utils";
 
 export interface ReleventCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -22,7 +22,7 @@ const ReleventCard = ({
   return (
     <div
       className={cn(
-        "flex flex-col items-center w-[fit-content] gap-[5px]",
+        "flex flex-col items-center w-[fit-content] gap-[5px] cursor-pointer hover:opacity-75",
         className
       )}
     >
