@@ -4,6 +4,7 @@ import ReleventCard from "../../../cards/relevant-card";
 import fakeLoadingPromise from "../../../../helpers/fakeLoadingPromise";
 import { ScrollArea, ScrollBar } from "../../../ui/scroll-area";
 import { RelevantCardSkeleton } from "../../../skeletons/relevant-card-skeleton";
+import { data } from "../../../../lib/data/relevant-list.data";
 
 function ReleventList({
   className,
@@ -17,21 +18,6 @@ function ReleventList({
       setLoading(false);
     });
   }, []);
-
-  const data = [
-    {
-      url: "https://github.com/shadcn.png",
-      fallback: "cn",
-      text: "Card 1",
-      status: "active",
-    },
-    {
-      url: "https://example.com/image.png",
-      fallback: "cn",
-      text: "Card 2",
-      status: "default",
-    },
-  ];
 
   const getStatusColor = (status: string) => {
     if (status === "active") return "#5C5C5C";
@@ -48,7 +34,7 @@ function ReleventList({
         )}
 
         {!loading &&
-          [...data, ...data, ...data, ...data].map((data, index) => (
+          data.map((data, index) => (
             <ReleventCard
               key={index}
               url={data.url}

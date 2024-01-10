@@ -3,6 +3,7 @@ import { cn } from "../../../../lib/utils";
 import CategoryCard from "../../../cards/category-card";
 import fakeLoadingPromise from "../../../../helpers/fakeLoadingPromise";
 import { CategoryCardSkeleton } from "../../../skeletons/category-card-skeleton";
+import { data } from "../../../../lib/data/category-list.data";
 
 function CategoryList({
   className,
@@ -16,21 +17,6 @@ function CategoryList({
       setLoading(false);
     });
   }, []);
-
-  const data = [
-    {
-      url: "https://github.com/shadcn.png",
-      title: "Card 1",
-      status: "active",
-      quantity: 3000,
-    },
-    {
-      url: "https://example.com/image.png",
-      title: "Card 2",
-      status: "default",
-      quantity: 3000,
-    },
-  ];
 
   const getStatusColor = (status: string) => {
     if (status === "active") return "#5C5C5C";
@@ -46,12 +32,13 @@ function CategoryList({
       )}
 
       {!loading &&
-        [...data, ...data, ...data, ...data].map((data, index) => (
+        data.map((data, index) => (
           <CategoryCard
             key={index}
             url={data.url}
             title={data.title}
             quantity={data.quantity}
+            className="hover:bg-black/5 cursor-pointer"
             props={{
               img: {
                 className: `border-2 border-[${getStatusColor(

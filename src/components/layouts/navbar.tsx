@@ -1,5 +1,4 @@
-import { AlignJustify, Search, ShoppingCart } from "lucide-react";
-import { MainNav } from "./main-nav";
+import { AlignJustify, ShoppingCart } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import {
@@ -9,11 +8,12 @@ import {
   DialogHeader,
   DialogTrigger,
 } from "../ui/dialog";
+import { ReactSVG } from "react-svg";
 
 const Nav = () => {
   return (
     <>
-      <div className="flex text-white bg-black/10 px-[20px] py-[10px] rounded-[100px] gap-[10px]">
+      <div className="flex text-white hover:bg-black/10 px-[20px] py-[10px] rounded-[100px] gap-[10px] cursor-pointer items-center">
         <AlignJustify />
         <p>Каталог</p>
       </div>
@@ -30,22 +30,24 @@ const Nav = () => {
       </div>
 
       <div className="flex items-center gap-[10px] justify-center md:justify-start">
-        <div className="text-white text-end">
-          <p className="text-[12px] text-nowrap">Добро пожаловать</p>
-          <p className="font-semibold text-nowrap">Вход/Регистрация</p>
-        </div>
+        <div className="flex items-center gap-[10px] hover:bg-black/20 cursor-pointer p-[5px] rounded-[10px]">
+          <div className="text-white text-end">
+            <p className="text-[12px] text-nowrap">Добро пожаловать</p>
+            <p className="font-semibold text-nowrap">Вход/Регистрация</p>
+          </div>
 
-        <div>
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <div>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </div>
         </div>
 
         <div className="w-[2px] h-[40px] bg-white/20"></div>
 
         <div>
-          <Badge className="bg-white text-[#2D82BE] p-[6px] round-full cursor-pointer">
+          <Badge className="bg-white text-[#2D82BE] p-[6px] round-full cursor-pointer hover:bg-black/10 hover:text-white">
             <ShoppingCart />
           </Badge>
         </div>
@@ -57,9 +59,9 @@ const Nav = () => {
 const Navbar = () => {
   return (
     <div className="flex h-16 items-center bg-[#2D82BE]">
-      <div className="container">
+      <div className="container px-[55px]">
         <div className="hidden md:flex h-16 items-center gap-[22px] justify-between flex-col md:flex-row">
-          <img src="./logo.png" className="mr-[20px]" />
+          <ReactSVG src="logo.svg" className="cursor-pointer text-white" />
           <Nav />
         </div>
 

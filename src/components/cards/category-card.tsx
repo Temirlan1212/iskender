@@ -1,3 +1,4 @@
+import { truncateText } from "../../helpers/truncate";
 import { cn } from "../../lib/utils";
 
 export interface CategoryCardProps
@@ -25,7 +26,7 @@ const CategoryCard = ({
       )}
     >
       <div className="p-[10px]">
-        <p className="font-semibold">{title}</p>
+        <p className="font-semibold">{truncateText(title, 13)}</p>
         <p className="text-[#727272]">{quantity} товаров</p>
       </div>
 
